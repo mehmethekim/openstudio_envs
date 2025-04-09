@@ -4,4 +4,4 @@
 **/reports/
 **/out.osw
 **/generated_files/
-
+.DS_Store
