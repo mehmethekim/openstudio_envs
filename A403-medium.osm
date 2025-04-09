@@ -310,7 +310,7 @@ OS:DefaultScheduleSet,
   {5d7fb750-935f-4d50-85c3-1136925566e1}, !- Handle
   189.1-2009 - Office - OpenOffice - CZ1-3 Schedule Set, !- Name
   ,                                       !- Hours of Operation Schedule Name
-  {b851d6ef-b009-4900-9073-a03d8624e57f}, !- Number of People Schedule Name
+  {d522fd11-8ac5-4d12-b624-f11b99bd8853}, !- Number of People Schedule Name
   {6f81a10e-2ed8-4826-a8e9-427453661d3b}, !- People Activity Level Schedule Name
   {dfea58d2-7ebd-423f-bc51-9de159ac5fea}, !- Lighting Schedule Name
   {c9970bd8-f3f2-4093-8410-a95253f8c1c4}, !- Electric Equipment Schedule Name
@@ -1773,7 +1773,7 @@ OS:ElectricEquipment:Definition,
 OS:SpaceType,
   {b8dc57dd-68d2-4daf-9b98-1f128452b30d}, !- Handle
   189.1-2009 - Office - OpenOffice - CZ1-3, !- Name
-  ,                                       !- Default Construction Set Name
+  {6342bdbf-51a1-4076-9eb3-f7a8b7e6e127}, !- Default Construction Set Name
   {5d7fb750-935f-4d50-85c3-1136925566e1}, !- Default Schedule Set Name
   {7dfd25c7-01a1-47b8-a557-29345bbd57ef}, !- Group Rendering Name
   {9bea73c3-3ec4-4bf4-82f3-d3f33a56c673}, !- Design Specification Outdoor Air Object Name
@@ -1798,142 +1798,6 @@ OS:DesignSpecification:OutdoorAir,
   ,                                       !- Outdoor Air Flow Rate {m3/s}
   ,                                       !- Outdoor Air Flow Air Changes per Hour {1/hr}
   ;                                       !- Outdoor Air Flow Rate Fraction Schedule Name
-
-OS:Schedule:Ruleset,
-  {b851d6ef-b009-4900-9073-a03d8624e57f}, ! Handle
-  Office Work Occ 1,                      ! Name
-  {115fdce8-717e-4c67-b4eb-a08e2ccddaab}, ! Schedule Type Limits Name
-  {88022a7c-262d-496e-bfc3-69efd6ef0679}, ! Default Day Schedule Name
-  {7234a67a-3784-450a-a87d-4e90e326cfab}, ! Summer Design Day Schedule Name
-  {893d721c-39b3-47a3-a491-4dbc40e53fb3}; ! Winter Design Day Schedule Name
-
-OS:Schedule:Day,
-  {88022a7c-262d-496e-bfc3-69efd6ef0679}, !- Handle
-  Office Bldg Occ Default Schedule 1,     !- Name
-  {115fdce8-717e-4c67-b4eb-a08e2ccddaab}, !- Schedule Type Limits Name
-  No,                                     !- Interpolate to Timestep
-  6,                                      !- Hour 1
-  0,                                      !- Minute 1
-  0,                                      !- Value Until Time 1
-  7,                                      !- Hour 2
-  0,                                      !- Minute 2
-  0.100000001490116,                      !- Value Until Time 2
-  8,                                      !- Hour 3
-  0,                                      !- Minute 3
-  0.200000002980232,                      !- Value Until Time 3
-  12,                                     !- Hour 4
-  0,                                      !- Minute 4
-  0.850000023841858,                      !- Value Until Time 4
-  13,                                     !- Hour 5
-  0,                                      !- Minute 5
-  0.5,                                    !- Value Until Time 5
-  17,                                     !- Hour 6
-  0,                                      !- Minute 6
-  0.850000023841858,                      !- Value Until Time 6
-  18,                                     !- Hour 7
-  0,                                      !- Minute 7
-  0.699999988079071,                      !- Value Until Time 7
-  20,                                     !- Hour 8
-  0,                                      !- Minute 8
-  0.400000005960464,                      !- Value Until Time 8
-  22,                                     !- Hour 9
-  0,                                      !- Minute 9
-  0.100000001490116,                      !- Value Until Time 9
-  24,                                     !- Hour 10
-  0,                                      !- Minute 10
-  0.0500000007450581;                     !- Value Until Time 10
-
-OS:Schedule:Day,
-  {7234a67a-3784-450a-a87d-4e90e326cfab}, !- Handle
-  Office Bldg Occ Summer Design Day 1,    !- Name
-  {115fdce8-717e-4c67-b4eb-a08e2ccddaab}, !- Schedule Type Limits Name
-  No,                                     !- Interpolate to Timestep
-  6,                                      !- Hour 1
-  0,                                      !- Minute 1
-  0,                                      !- Value Until Time 1
-  22,                                     !- Hour 2
-  0,                                      !- Minute 2
-  1,                                      !- Value Until Time 2
-  24,                                     !- Hour 3
-  0,                                      !- Minute 3
-  0.050000000000000003;                   !- Value Until Time 3
-
-OS:Schedule:Day,
-  {893d721c-39b3-47a3-a491-4dbc40e53fb3}, !- Handle
-  Office Bldg Occ Winter Design Day 1,    !- Name
-  {115fdce8-717e-4c67-b4eb-a08e2ccddaab}, !- Schedule Type Limits Name
-  No,                                     !- Interpolate to Timestep
-  24,                                     !- Hour 1
-  0,                                      !- Minute 1
-  0;                                      !- Value Until Time 1
-
-OS:Schedule:Rule,
-  {add9059c-1cc9-47c2-ba55-a4a4c737e7c4}, !- Handle
-  Office Work Occ Rule 3,                 !- Name
-  {b851d6ef-b009-4900-9073-a03d8624e57f}, !- Schedule Ruleset Name
-  0,                                      !- Rule Order
-  {562a8c87-789f-48f4-8743-39604e34e80a}, !- Day Schedule Name
-  Yes,                                    !- Apply Sunday
-  No,                                     !- Apply Monday
-  No,                                     !- Apply Tuesday
-  No,                                     !- Apply Wednesday
-  No,                                     !- Apply Thursday
-  No,                                     !- Apply Friday
-  No,                                     !- Apply Saturday
-  DateRange,                              !- Date Specification Type
-  1,                                      !- Start Month
-  1,                                      !- Start Day
-  12,                                     !- End Month
-  31;                                     !- End Day
-
-OS:Schedule:Rule,
-  {541349eb-61d8-460c-bd50-e51f1954f0c8}, !- Handle
-  Office Work Occ Rule 4,                 !- Name
-  {b851d6ef-b009-4900-9073-a03d8624e57f}, !- Schedule Ruleset Name
-  1,                                      !- Rule Order
-  {83119339-b987-4408-8da3-8402ed8766e3}, !- Day Schedule Name
-  No,                                     !- Apply Sunday
-  No,                                     !- Apply Monday
-  No,                                     !- Apply Tuesday
-  No,                                     !- Apply Wednesday
-  No,                                     !- Apply Thursday
-  No,                                     !- Apply Friday
-  Yes,                                    !- Apply Saturday
-  DateRange,                              !- Date Specification Type
-  1,                                      !- Start Month
-  1,                                      !- Start Day
-  12,                                     !- End Month
-  31;                                     !- End Day
-
-OS:Schedule:Day,
-  {562a8c87-789f-48f4-8743-39604e34e80a}, !- Handle
-  Office Bldg Occ Rule 1 Day Schedule 1,  !- Name
-  {115fdce8-717e-4c67-b4eb-a08e2ccddaab}, !- Schedule Type Limits Name
-  No,                                     !- Interpolate to Timestep
-  24,                                     !- Hour 1
-  0,                                      !- Minute 1
-  0;                                      !- Value Until Time 1
-
-OS:Schedule:Day,
-  {83119339-b987-4408-8da3-8402ed8766e3}, !- Handle
-  Office Bldg Occ Rule 2 Day Schedule 1,  !- Name
-  {115fdce8-717e-4c67-b4eb-a08e2ccddaab}, !- Schedule Type Limits Name
-  No,                                     !- Interpolate to Timestep
-  6,                                      !- Hour 1
-  0,                                      !- Minute 1
-  0,                                      !- Value Until Time 1
-  8,                                      !- Hour 2
-  0,                                      !- Minute 2
-  0.100000001490116,                      !- Value Until Time 2
-  14,                                     !- Hour 3
-  0,                                      !- Minute 3
-  0.400000005960464,                      !- Value Until Time 3
-  17,                                     !- Hour 4
-  0,                                      !- Minute 4
-  0.100000001490116,                      !- Value Until Time 4
-  24,                                     !- Hour 5
-  0,                                      !- Minute 5
-  0;                                      !- Value Until Time 5
 
 OS:People,
   {1b10afd2-eab9-47ef-8799-b015d0925178}, !- Handle
@@ -2535,8 +2399,8 @@ OS:ZoneVentilation:DesignFlowRate,
   300,                                    !- Fan Pressure Rise {Pa}
   1,                                      !- Fan Total Efficiency
   1,                                      !- Constant Term Coefficient
-  0.03636,                                !- Temperature Term Coefficient
-  0.1177,                                 !- Velocity Term Coefficient
+  0,                                      !- Temperature Term Coefficient
+  0,                                      !- Velocity Term Coefficient
   0,                                      !- Velocity Squared Term Coefficient
   0,                                      !- Minimum Indoor Temperature {C}
   ,                                       !- Minimum Indoor Temperature Schedule Name
@@ -2720,7 +2584,7 @@ OS:Controller:OutdoorAir,
   ,                                       !- Mixed Air Node Name
   ,                                       !- Actuator Node Name
   Autosize,                               !- Minimum Outdoor Air Flow Rate {m3/s}
-  Autosize,                               !- Maximum Outdoor Air Flow Rate {m3/s}
+  0.3,                                    !- Maximum Outdoor Air Flow Rate {m3/s}
   NoEconomizer,                           !- Economizer Control Type
   ModulateFlow,                           !- Economizer Control Action Type
   28,                                     !- Economizer Maximum Limit Dry-Bulb Temperature {C}
@@ -3100,7 +2964,7 @@ OS:Fan:VariableVolume,
   Var Spd Fan,                            ! Name
   {93de6f80-ba78-4def-8cf8-4f9d4a0b6f39}, ! Availability Schedule Name
   0.60450000000000004,                    ! Fan Efficiency
-  1017.592,                               ! Pressure Rise {Pa}
+  250,                                    ! Pressure Rise {Pa}
   Autosize,                               ! Maximum Flow Rate {m3/s}
   FixedFlowRate,                          ! Fan Power Minimum Flow Rate Input Method
   0,                                      ! Fan Power Minimum Flow Fraction
@@ -3177,13 +3041,6 @@ OS:Output:Variable,
   Output Variable 3,                      !- Name
   *,                                      !- Key Value
   Fan Electricity Energy,                 !- Variable Name
-  Timestep;                               !- Reporting Frequency
-
-OS:Output:Variable,
-  {6d6f5d17-7a3a-4d7f-96f3-06e33bc5cb4e}, !- Handle
-  Output Variable 4,                      !- Name
-  *,                                      !- Key Value
-  Heating Coil Electricity Rate,          !- Variable Name
   Timestep;                               !- Reporting Frequency
 
 OS:Output:Variable,
@@ -3378,4 +3235,91 @@ OS:Rendering:Color,
   255,                                    !- Rendering Red Value
   205,                                    !- Rendering Green Value
   235;                                    !- Rendering Blue Value
+
+OS:Rendering:Color,
+  {f873df3b-a4ef-43a3-845d-31249ebbd0c3}, !- Handle
+  Rendering Color 20,                     !- Name
+  250,                                    !- Rendering Red Value
+  114,                                    !- Rendering Green Value
+  128;                                    !- Rendering Blue Value
+
+OS:Rendering:Color,
+  {4cf1ea7e-3539-40c3-80f4-31d1b85301bd}, !- Handle
+  Rendering Color 21,                     !- Name
+  148,                                    !- Rendering Red Value
+  211,                                    !- Rendering Green Value
+  0;                                      !- Rendering Blue Value
+
+OS:Rendering:Color,
+  {6ba5010f-0f10-428d-a160-c6eaac816b52}, !- Handle
+  Rendering Color 22,                     !- Name
+  173,                                    !- Rendering Red Value
+  47,                                     !- Rendering Green Value
+  255;                                    !- Rendering Blue Value
+
+OS:Rendering:Color,
+  {f17b644f-8b3d-4d13-a0be-6c5e2f628be1}, !- Handle
+  Rendering Color 23,                     !- Name
+  95,                                     !- Rendering Red Value
+  160,                                    !- Rendering Green Value
+  158;                                    !- Rendering Blue Value
+
+OS:DefaultConstructionSet,
+  {6342bdbf-51a1-4076-9eb3-f7a8b7e6e127}, !- Handle
+  189.1-2009 - CZ1 - Office 1,            !- Name
+  {4da01776-60a5-45cc-acb6-cce558c26ef1}, !- Default Exterior Surface Constructions Name
+  {084027ed-fabe-4a03-b6e8-c5177c20df30}, !- Default Interior Surface Constructions Name
+  {3fa66df8-c7d9-4e36-9ef6-9bf2f459b1d4}, !- Default Ground Contact Surface Constructions Name
+  {512bc0f6-9872-49a3-9a21-8bf50fbb702c}, !- Default Exterior SubSurface Constructions Name
+  {fdacb125-d990-4c35-94e3-b38206ffd1df}, !- Default Interior SubSurface Constructions Name
+  {d4e3befa-2162-414c-85f6-a106f6808fa8}, !- Interior Partition Construction Name
+  ,                                       !- Space Shading Construction Name
+  ,                                       !- Building Shading Construction Name
+  ,                                       !- Site Shading Construction Name
+  ;                                       !- Adiabatic Surface Construction Name
+
+OS:DefaultSurfaceConstructions,
+  {4da01776-60a5-45cc-acb6-cce558c26ef1}, !- Handle
+  Default Surface Constructions 1,        !- Name
+  {3ea2df02-d98a-4695-bfce-8ea97d8e6901}, !- Floor Construction Name
+  {58869f91-2834-4bff-b28a-f6eafffbaa64}, !- Wall Construction Name
+  {ca1377fa-bf72-4410-8adc-bc14e482dfdc}; !- Roof Ceiling Construction Name
+
+OS:DefaultSurfaceConstructions,
+  {084027ed-fabe-4a03-b6e8-c5177c20df30}, !- Handle
+  Default Surface Constructions 2,        !- Name
+  {6f7e848f-8f54-4e67-a652-1468adfac0a9}, !- Floor Construction Name
+  {48523adf-d62d-44eb-880a-7d378f481950}, !- Wall Construction Name
+  {f2aea701-8044-4d7b-8bd3-cad9a5d7df32}; !- Roof Ceiling Construction Name
+
+OS:DefaultSurfaceConstructions,
+  {3fa66df8-c7d9-4e36-9ef6-9bf2f459b1d4}, !- Handle
+  Default Surface Constructions 3,        !- Name
+  {3ea2df02-d98a-4695-bfce-8ea97d8e6901}, !- Floor Construction Name
+  {3ea2df02-d98a-4695-bfce-8ea97d8e6901}, !- Wall Construction Name
+  {3ea2df02-d98a-4695-bfce-8ea97d8e6901}; !- Roof Ceiling Construction Name
+
+OS:DefaultSubSurfaceConstructions,
+  {512bc0f6-9872-49a3-9a21-8bf50fbb702c}, !- Handle
+  Default Sub Surface Constructions 1,    !- Name
+  {1266e47a-fb31-47c5-88d3-dd1abb1d515d}, !- Fixed Window Construction Name
+  {1266e47a-fb31-47c5-88d3-dd1abb1d515d}, !- Operable Window Construction Name
+  {c9b1cee9-f63e-4890-b1e0-f9caff92892b}, !- Door Construction Name
+  ,                                       !- Glass Door Construction Name
+  ,                                       !- Overhead Door Construction Name
+  ,                                       !- Skylight Construction Name
+  {8528eb31-bf81-4b10-9506-1520517faaa8}, !- Tubular Daylight Dome Construction Name
+  {8528eb31-bf81-4b10-9506-1520517faaa8}; !- Tubular Daylight Diffuser Construction Name
+
+OS:DefaultSubSurfaceConstructions,
+  {fdacb125-d990-4c35-94e3-b38206ffd1df}, !- Handle
+  Default Sub Surface Constructions 2,    !- Name
+  {8528eb31-bf81-4b10-9506-1520517faaa8}, !- Fixed Window Construction Name
+  {8528eb31-bf81-4b10-9506-1520517faaa8}, !- Operable Window Construction Name
+  {b74e78e9-d279-4c14-99e1-fd2db3d94dd8}, !- Door Construction Name
+  ,                                       !- Glass Door Construction Name
+  ,                                       !- Overhead Door Construction Name
+  ,                                       !- Skylight Construction Name
+  ,                                       !- Tubular Daylight Dome Construction Name
+  ;                                       !- Tubular Daylight Diffuser Construction Name
 
