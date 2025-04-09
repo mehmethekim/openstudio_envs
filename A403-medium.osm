@@ -1754,22 +1754,6 @@ OS:StandardsInformation:Material,
   {1bb6e8d1-ff13-40eb-8b52-8eae48e8e9d3}, !- Handle
   {171edb35-191f-4951-b518-40ae1d6be439}; !- Material Name
 
-OS:People:Definition,
-  {f7c64bb9-bd78-4081-b603-c98285882bf1}, !- Handle
-  189.1-2009 - Office - OpenOffice - CZ1-3 People Definition, !- Name
-  People/Area,                            !- Number of People Calculation Method
-  ,                                       !- Number of People {people}
-  0.1,                                    !- People per Space Floor Area {person/m2}
-  ,                                       !- Space Floor Area per Person {m2/person}
-  0.3,                                    !- Fraction Radiant
-  ,                                       !- Sensible Heat Fraction
-  ,                                       !- Carbon Dioxide Generation Rate {m3/s-W}
-  ,                                       !- Enable ASHRAE 55 Comfort Warnings
-  ,                                       !- Mean Radiant Temperature Calculation Type
-  Fanger,                                 !- Thermal Comfort Model Type 1
-  Pierce,                                 !- Thermal Comfort Model Type 2
-  KSU;                                    !- Thermal Comfort Model Type 3
-
 OS:Lights:Definition,
   {cb7e318f-6956-4ba9-bf63-ad79b7f0f20e}, !- Handle
   189.1-2009 - Office - OpenOffice - CZ1-3 Lights Definition, !- Name
@@ -1969,9 +1953,16 @@ OS:People:Definition,
   189.1-2009 - Office - OpenOffice - CZ1-3 People Definition 1, !- Name
   People/Area,                            !- Number of People Calculation Method
   ,                                       !- Number of People {people}
-  0.056510529687726,                      !- People per Space Floor Area {person/m2}
+  0.1,                                    !- People per Space Floor Area {person/m2}
   ,                                       !- Space Floor Area per Person {m2/person}
-  0.3;                                    !- Fraction Radiant
+  0.3,                                    !- Fraction Radiant
+  ,                                       !- Sensible Heat Fraction
+  ,                                       !- Carbon Dioxide Generation Rate {m3/s-W}
+  ,                                       !- Enable ASHRAE 55 Comfort Warnings
+  ,                                       !- Mean Radiant Temperature Calculation Type
+  Fanger,                                 !- Thermal Comfort Model Type 1
+  Pierce,                                 !- Thermal Comfort Model Type 2
+  KSU;                                    !- Thermal Comfort Model Type 3
 
 OS:Lights,
   {12b20672-2f03-4bfe-9cfc-c15c901929d9}, !- Handle
