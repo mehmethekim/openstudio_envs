@@ -3381,3 +3381,10 @@ OS:Rendering:Color,
   219,                                    !- Rendering Green Value
   112;                                    !- Rendering Blue Value
 
+OS:Rendering:Color,
+  {a947b114-f3f1-4857-af50-695a585193f2}, !- Handle
+  Rendering Color 19,                     !- Name
+  255,                                    !- Rendering Red Value
+  205,                                    !- Rendering Green Value
+  235;                                    !- Rendering Blue Value
+
