@@ -1,0 +1,26 @@
+{
+   "created_at" : "20250402T215839Z",
+   "seed_file" : "../A403-medium-window.osm",
+   "steps" : 
+   [
+      {
+         "arguments" : 
+         {
+            "workEfficiencySchedule" : "{d26e377a-c831-491b-8ec7-28cd7e26963c}"
+         },
+         "description" : "This measure adds the necessary data to people objects to support Predicted Mean Vote output data. It also adds the variable request.",
+         "measure_dir_name" : "PredictedMeanVote 1 1",
+         "modeler_description" : "This will not add new people objects, but rather just extend the ones that are in the model. It will rely on schedules already made in the model instead of creating new schedules.",
+         "name" : "Predicted Mean Vote"
+      },
+      {
+         "arguments" : {},
+         "description" : "Often the eplusout.err file may request output diagnostics. This measure can be used to add this to the IDF file. Re-run your project to see the requested output.",
+         "measure_dir_name" : "AddOutputDiagnostics 1 1",
+         "modeler_description" : "Makes Output:Diagnostics object with choice list for optional values:, DisplayAllWarnings, DisplayExtraWarnings, DisplayUnusedSchedules, DisplayUnusedObjects, DisplayAdvancedReportVariables, DisplayZoneAirHeatBalanceOffBalance, DoNotMirrorDetachedShading, DisplayWeatherMissingDataWarnings, ReportDuringWarmup, ReportDetailedWarmupConvergence.",
+         "name" : "Add Output Diagnostics 1"
+      }
+   ],
+   "updated_at" : "20250420T141846Z",
+   "weather_file" : "USA_CA_San.Francisco.Intl.AP.724940_TMY3.epw"
+}
